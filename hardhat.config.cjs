@@ -1,12 +1,12 @@
+/** @type import('hardhat/config').HardhatUserConfig */
 require("dotenv").config();
-const { HardhatUserConfig } = require("hardhat/config");
 require("@nomicfoundation/hardhat-toolbox");
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL || "";
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
 
-const config = {
+module.exports = {
   solidity: "0.8.18",
   networks: {
     sepolia: {
@@ -21,5 +21,3 @@ const config = {
     sources: "./src/contracts", // Location of contract source files
   },
 };
-
-module.exports = config;

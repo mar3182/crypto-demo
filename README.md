@@ -36,6 +36,9 @@ npm run build
 ```bash
 # Deploy to GitHub Pages
 npm run deploy
+
+# Or use the provided deployment script
+./deploy.sh
 ```
 
 ### Smart Contract Deployment
@@ -44,7 +47,11 @@ npm run deploy
 2. Deploy contracts to Sepolia testnet:
 
 ```bash
+# Use the Hardhat command directly
 npx hardhat run scripts/deploy.js --network sepolia
+
+# Or use the provided deployment script
+./deploy-contracts.sh
 ```
 
 3. Update the `.env` file with the newly deployed contract addresses.
