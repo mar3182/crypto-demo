@@ -7,6 +7,7 @@ import CvNftPage from './pages/CvNftPage';
 import SkillDemosPage from './pages/SkillDemosPage';
 import LiveDAppsPage from './pages/LiveDAppsPage';
 import AboutPage from './pages/AboutPage';
+import AchievementsPage from './pages/AchievementsPage';
 import './App.css';
 
 function App() {
