@@ -2,19 +2,42 @@
 
 An interactive full-stack & blockchain portfolio showcasing MERN & Solidity development skills. This project is designed as a portfolio to demonstrate capabilities to recruiters.
 
+![Crypto Oasis Portfolio Screenshot](public/images/00%20Landing%20Page.jpg)
+
 ## Features
 
 - **On-Chain CV NFT**: A personal CV displayed as an ERC-721 NFT with on-chain metadata
 - **Interactive Skill Demos**: Quizzes and challenges demonstrating JavaScript and Solidity knowledge
 - **Live DApps**: Interactive blockchain applications running on the Sepolia testnet
 - **Achievement Showcase**: Soul-Bound Tokens (SBTs) that verify skills and accomplishments
+- **Wallet Connection**: MetaMask integration for blockchain interactions
 
 ## Tech Stack
 
-- **Frontend**: React, React Router, Tailwind CSS, NextUI
-- **Blockchain**: Solidity, Ethers.js, Web3 integrations
-- **Backend**: Node.js/Express.js (API endpoints)
-- **Storage**: IPFS for decentralized content
+- **Frontend**: React (with Vite), React Router, Tailwind CSS, NextUI Components
+- **Blockchain**: Solidity, Ethers.js, Hardhat, Web3 integrations
+- **Smart Contracts**: OpenZeppelin libraries, ERC-721 tokens
+- **Deployment**: GitHub Pages (frontend), Sepolia testnet (smart contracts)
+
+## Project Structure
+
+```
+crypto-oasis/
+├── public/             # Static assets
+│   └── images/         # Project images and screenshots
+├── src/
+│   ├── components/     # Reusable UI components
+│   │   ├── layout/     # Layout components (Header, Footer)
+│   │   └── ui/         # UI components (ShowcaseCard, etc.)
+│   ├── contexts/       # React contexts (WalletContext)
+│   ├── contracts/      # Solidity smart contracts
+│   │   └── abi/        # Contract ABI files
+│   ├── hooks/          # Custom React hooks
+│   ├── pages/          # Application pages
+│   └── utils/          # Utility functions
+├── scripts/            # Deployment scripts
+└── hardhat.config.js   # Hardhat configuration
+```
 
 ## Local Development
 
@@ -30,6 +53,8 @@ npm run build
 ```
 
 ## Deployment
+
+The project includes scripts for both frontend and smart contract deployment.
 
 ### Frontend Deployment (GitHub Pages)
 
@@ -47,8 +72,22 @@ npm run deploy
 2. Deploy contracts to Sepolia testnet:
 
 ```bash
-# Use the Hardhat command directly
+# Use the deployment script
+./deploy-contracts.sh
+
+# Or use Hardhat directly
 npx hardhat run scripts/deploy.js --network sepolia
+```
+
+For detailed deployment instructions, please refer to [DEPLOYMENT_INSTRUCTIONS.md](DEPLOYMENT_INSTRUCTIONS.md).
+
+## Live Demo
+
+The deployed application is available at: [https://mar3182.github.io/crypto-demo/](https://mar3182.github.io/crypto-demo/)
+
+## License
+
+This project is licensed under the MIT License.
 
 # Or use the provided deployment script
 ./deploy-contracts.sh
