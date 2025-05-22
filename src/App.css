@@ -1,0 +1,28 @@
+/* General styles that aren't covered by Tailwind */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom transitions */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
