@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Pages 404 Redirect</title>
+    <script>
+      // Single Page App (SPA) redirect for GitHub Pages
+      // This script handles redirects for React Router in GitHub Pages
+      (function () {
+        // If we're not on the homepage, redirect to index.html to let React Router handle routing
+        var segmentCount = 1; // Adjust based on your repo name - crypto-demo is 1 segment
+        var l = window.location;
+
+        if (l.search) {
+          // Preserve query parameters
+          var q = {};
+          l.search
+            .slice(1)
+            .split("&")
+            .forEach(function (v) {
+              var a = v.split("=");
+              q[a[0]] = a.slice(1).join("=").replace(/~and~/g, "&");
+            });
+
+          if (q.p !== undefined) {
+            // If 'p' parameter exists, redirect to that path
+            window.history.replaceState(
+              null,
+              null,
+              l.pathname.slice(0, -1) +
+                (q.p || "") +
+                (q.q ? "?" + q.q : "") +
+                l.hash
+            );
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Page Not Found</h1>
+    <p>Redirecting to homepage...</p>
+    <script>
+      // Redirect to the homepage after a brief delay
+      setTimeout(function () {
+        window.location.href = "/crypto-demo/";
+      }, 1000);
+    </script>
+  </body>
+</html>
